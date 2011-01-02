@@ -8,10 +8,6 @@ a img {
   border: none;
 }
 
-a {
-  color: #0000FF;
-}
-
 .clear {
   clear: both;
   height: 0;
@@ -23,7 +19,6 @@ a {
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 40px;
-  border: solid 1px black;
   margin-top: 20px;
 }
 
@@ -72,4 +67,60 @@ a {
 
 .error_messages ul {
   margin: 0;
+}
+
+header {
+  padding: 0px;
+}
+
+header h1 {
+  padding-left: 50px;
+  margin: 0px;
+}
+
+header h1 a {
+  color: #000;
+  text-decoration: none;
+}
+
+header h3 {
+  padding-left: 50px;
+  margin: 0px;
+  color: #CCC;
+  font-style: italic;
+  font-size: 12px;
+}
+
+header h3 a {
+  color: #CCC;
+  text-decoration: none;
+}
+
+nav {
+  float: right;
+  white-space: nowrap;
+  font-size: 10px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+nav ul li a {
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+}
+
+#footer {
+  text-align: center;
+  font-weight: bold;
+  font-size: 10px;
+  padding: 5px;
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= title %></title>
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
@@ -9,11 +9,15 @@
   </head>
   <body>
     <div id="container">
+      <%= render 'layouts/header' %>
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
-      <%= content_tag :h1, yield(:title) if show_title? %>
+      
       <%= yield %>
+    </div>
+    <div id="footer">
+      Copyright <%= Time.now.year %> CadApp, Inc.  All Rights Reserved.
     </div>
   </body>
 </html>
