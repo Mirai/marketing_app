@@ -6,6 +6,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 group :development do
   gem 'rspec-rails'
   gem 'nifty-generators'
+  gem 'annotate-models'
 end
 
 group :test do
