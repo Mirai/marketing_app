@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :address2
       t.string :city
       t.string :state
-      t.integer :zip
+      t.string :zip
       t.string :company
       t.string :subdomain
 

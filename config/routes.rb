@@ -1,9 +1,8 @@
 MarketingApp::Application.routes.draw do
-  get "users/new"
-
   root :to => 'pages#home'
 
   match '/signup', :to => 'users#new'
+  resources :users
 
   match '/more', :to => 'pages#more'
   match '/pricing', :to => 'pages#pricing'
