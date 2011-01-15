@@ -10,4 +10,7 @@ describe UsersController do
     end
   end
 
+#  describe "POST 'create'" do
+ #   describe "failure"
+
 end

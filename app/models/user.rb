@@ -18,7 +18,9 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :address1, :address2, :city, :state, :zip, :company, :subdomain
+  acts_as_authentic
+
+  attr_accessible :name, :email, :address1, :address2, :city, :state, :zip, :company, :subdomain, :password, :password_confirmation
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -45,4 +47,8 @@ class User < ActiveRecord::Base
 			:length => { :is => 5 }
 
   validates :subdomain, :presence => true
+
+  validates :password,	:presence => true,
+			:confirmation => true,
+			:length => { :within => 6..40 }
 end

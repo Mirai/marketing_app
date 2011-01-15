@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/railsware/authlogic.git
+  revision: 4be0a3e6b642aa917f7d701165f4765248be8713
+  specs:
+    authlogic (2.1.6)
+      activesupport
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -31,6 +38,7 @@ GEM
     annotate-models (1.0.4)
     arel (2.0.6)
     builder (2.1.2)
+    cancan (1.5.0)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -91,6 +99,8 @@ PLATFORMS
 
 DEPENDENCIES
   annotate-models
+  authlogic!
+  cancan
   nifty-generators
   rails (= 3.0.3)
   rspec
