@@ -50,6 +50,6 @@
       <%= check_box_tag "user[roles][]", role, @user.roles.include?(role) %>  
       <%= h role.humanize %>  
     <% end %>  
-    <%= hidden_field_tag "user[roles][]"%>  
+    <%= hidden_field_tag "user[roles][]"%>
   </p>
 <% #end %>

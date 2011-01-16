@@ -21,10 +21,11 @@
 #  roles_mask        :integer
 #
 
+
 class User < ActiveRecord::Base
   acts_as_authentic
 
-  attr_accessible :name, :email, :address1, :address2, :city, :state, :zip, :company, :subdomain, :password, :password_confirmation, :roles_mask
+  attr_accessible :name, :email, :address1, :address2, :city, :state, :zip, :company, :subdomain, :password, :password_confirmation, :roles
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -54,7 +55,8 @@ class User < ActiveRecord::Base
 
   validates :password,	:presence => true,
 			:confirmation => true,
-			:length => { :within => 6..40 }
+			:length => { :within => 6..40 },
+			:if => :new_record? 
 
   scope :with_role, lambda { |role| {:conditions => "roles_mask & #{2**ROLES.index(role.to_s)} > 0 "} }
 
