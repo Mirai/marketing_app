@@ -7,12 +7,6 @@ class Ability
 
     if user.role? :admin
       can :manage, :all
-    else
-      can :read, :all
-#      can :create, User
- #     can :update, User do |user|
-  #      user == current_user
-   #   end
     end
   end
 end

@@ -1,26 +1,30 @@
 # == Schema Information
-# Schema version: 20110109140402
+# Schema version: 20110115053421
 #
 # Table name: users
 #
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  address1   :string(255)
-#  address2   :string(255)
-#  city       :string(255)
-#  state      :string(255)
-#  zip        :integer
-#  company    :string(255)
-#  subdomain  :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id                :integer         not null, primary key
+#  name              :string(255)
+#  email             :string(255)
+#  address1          :string(255)
+#  address2          :string(255)
+#  city              :string(255)
+#  state             :string(255)
+#  zip               :string(255)
+#  company           :string(255)
+#  subdomain         :string(255)
+#  created_at        :datetime
+#  updated_at        :datetime
+#  crypted_password  :string(255)
+#  password_salt     :string(255)
+#  persistence_token :string(255)
+#  roles_mask        :integer
 #
 
 class User < ActiveRecord::Base
   acts_as_authentic
 
-  attr_accessible :name, :email, :address1, :address2, :city, :state, :zip, :company, :subdomain, :password, :password_confirmation
+  attr_accessible :name, :email, :address1, :address2, :city, :state, :zip, :company, :subdomain, :password, :password_confirmation, :roles_mask
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

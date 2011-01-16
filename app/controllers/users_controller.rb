@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      redirect_to root_url, :notice => "Roles mask: #{@user.roles}"
+      redirect_to root_url, :notice => "Account successfully updated."
     else
       render :action => 'edit'
     end

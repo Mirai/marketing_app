@@ -1,6 +1,8 @@
 <nav>
   <% if current_user %>
-    <%= link_to "Users", admin_users_path %> |
+    <% if current_user.role? :admin %>
+      <%= link_to "Users", admin_users_path %> |
+    <% end %>
     <%= link_to 'Logout', admin_logout_path %>
   <% else %>
     <%= link_to 'Login', admin_login_path %>
