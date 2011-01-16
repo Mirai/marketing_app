@@ -1,9 +1,11 @@
 MarketingApp::Application.routes.draw do
+  get "faqs/index"
+
   root :to => 'pages#home'
 
   match '/signup', :to => 'users#new'
 
-  resources :users, :user_sessions#, :contacts, :faqs
+  resources :users, :user_sessions, :faqs
 
   match '/login', :to => 'user_sessions#new'
   match '/logout', :to => 'user_sessions#destroy'
