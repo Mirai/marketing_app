@@ -1,0 +1,37 @@
+<h1><%= @user.name %></h1>
+ 
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<p>
+  <strong>Address1:</strong>
+  <%= @user.address1 %>
+</p>
+<p>
+  <strong>Address2:</strong>
+  <%= @user.address2 %>
+</p>
+<p>
+  <strong>City:</strong>
+  <%= @user.city %>
+</p>
+<p>
+  <strong>State:</strong>
+  <%= @user.state %>
+</p>
+<p>
+  <strong>Zip:</strong>
+  <%= @user.zip %>
+</p>
+<p>
+  <strong>Company:</strong>
+  <%= @user.company %>
+</p>
+<p>
+  <strong>Subdomain</strong>
+  <%= @user.subdomain %>
+</p>
+ 
+<%= link_to 'Edit', edit_admin_user_path(@user) %> |
+<%= link_to 'Back', admin_users_path %>

@@ -51,4 +51,25 @@ class User < ActiveRecord::Base
   validates :password,	:presence => true,
 			:confirmation => true,
 			:length => { :within => 6..40 }
+
+  scope :with_role, lambda { |role| {:conditions => "roles_mask & #{2**ROLES.index(role.to_s)} > 0 "} }
+
+  ROLES = %w[admin]
+
+  def role_symbols
+    roles.map(&:to_sym)
+  end
+
+  def roles=(roles)  
+    self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.sum
+    puts self.roles_mask
+  end  
+  
+  def roles  
+    ROLES.reject { |r| ((roles_mask || 0) & 2**ROLES.index(r)).zero? }  
+  end
+
+  def role?(role)
+    roles.include? role.to_s
+  end
 end

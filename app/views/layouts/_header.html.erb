@@ -1,20 +1,5 @@
 <header>
-  <nav>
-    <ul>
-      <li><%= link_to "Home", root_path %></li> |
-      <li><%= link_to "Learn More", more_path %></li> |
-      <li><%= link_to "Pricing", pricing_path %></li> |
-      <li><%= link_to "FAQ", '#' %></li> |
-      <li><%= link_to "Contact", contact_path %></li> |
-      <% if current_user %>
-        <li><%= link_to "Edit Profile", edit_user_path(:current) %></li> |
-        <li><%= link_to "Logout", logout_path %></li>
-      <% else %>
-        <li><%= link_to "Sign Up", signup_path %></li> |
-        <li><%= link_to "Login", login_path %></li>
-      <% end %>
-    </ul>
-  </nav>
+  <%= render 'layouts/nav' %>
   <h1><%= link_to "CadEvent", root_path %></h1>
   <h3><%= link_to "Your Events, Simple.", root_path %></h3>
 </header>

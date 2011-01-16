@@ -1,14 +1,13 @@
 class UsersController < ApplicationController
   def new
-    @title = "Sign Up"
     @user = User.new
+    @title = "Sign Up"
   end
 
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:notice] = "Registration successful."
-      redirect_to root_url
+      redirect_to root_url, :notice => "Registration successful."
     else
       render :action => 'new'
     end
@@ -21,8 +20,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Successfully updated profile."
-      redirect_to root_url
+      redirect_to root_url, :notice => "Roles mask: #{@user.roles}"
     else
       render :action => 'edit'
     end
