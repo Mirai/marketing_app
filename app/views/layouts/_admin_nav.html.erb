@@ -2,6 +2,7 @@
   <% if current_user %>
     <% if current_user.role? :admin %>
       <%= link_to "Users", admin_users_path %> |
+      <%= link_to "FAQ", admin_faqs_path %> |
     <% end %>
     <%= link_to 'Logout', admin_logout_path %>
   <% else %>

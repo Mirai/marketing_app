@@ -1,0 +1,17 @@
+<h1>FAQ</h1>
+
+<table cellpadding="5" cellspacing="0">
+
+<% @faqs.each do |faq| %>
+  <tr>
+    <td>
+      <h3><%= faq.question %></h3>
+      <p><%= faq.answer %></p>
+    </td>
+    <td><%= link_to "Edit", edit_admin_faq_path(faq) %></td>
+    <td><%= link_to "Delete", admin_faq_path(faq), :confirm => "Are you sure?", :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to "New FAQ", new_admin_faq_path %>
