@@ -1,5 +1,5 @@
 <h1>Edit User</h1>
-<%= form_for @user do |f| %>
+<%= form_for [:admin, @user] do |f| %>
   <%= render 'users/form', :f => f %>
   <%= f.submit "Edit User" %>
 <% end %>

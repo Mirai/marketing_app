@@ -31,7 +31,7 @@ class Admin::UsersController < AdminController
     if @user.update_attributes(params[:user])
       redirect_to admin_users_path, :notice => "Successfully updated profile."
     else
-      render :action => 'edit'
+      render :action => 'admin/edit'
     end
   end
 

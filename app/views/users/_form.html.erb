@@ -43,7 +43,7 @@
   <%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %>
 </p>
-<% #if current_user.role? :admin %>
+<% if current_user && current_user.role?(:admin) %>
   <p>
     <%= f.label :roles %>  
     <% for role in User::ROLES %>  
@@ -52,4 +52,4 @@
     <% end %>  
     <%= hidden_field_tag "user[roles][]"%>
   </p>
-<% #end %>
+<% end %>
