@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @title = "Home"
+    @tweets = Twit.tweets
   end
 
   def more
