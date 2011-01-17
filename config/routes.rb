@@ -17,7 +17,11 @@ MarketingApp::Application.routes.draw do
   namespace :admin do
     resources :users
     resources :contacts
-    resources :faqs
+    resources :faqs do
+      collection do
+        post :reorder
+      end
+    end
     resources :user_sessions
   end
 

@@ -2,6 +2,16 @@ class Admin::FaqsController < AdminController
   load_and_authorize_resource
 
   def index
+    @faqs = Faq.order("position asc")
+  end
+
+  def reorder
+    params[:faq].each do |k,v|
+      faq = Faq.find(k)
+      faq.update_attributes(v)
+    end
+
+    redirect_to admin_faqs_path
   end
 
   def new

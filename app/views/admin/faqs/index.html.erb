@@ -1,9 +1,14 @@
 <h1>FAQ</h1>
 
+<%= form_tag reorder_admin_faqs_path do %>
+
 <table cellpadding="5" cellspacing="0">
 
 <% @faqs.each do |faq| %>
   <tr>
+    <td>
+      <%= select_tag "faq[#{faq.id}][position]", options_for_select(Faq.positions, faq.position) %>
+    </td>
     <td>
       <h3><%= faq.question %></h3>
       <p><%= faq.answer %></p>
@@ -13,5 +18,7 @@
   </tr>
 <% end %>
 </table>
+<%= submit_tag "Reorder FAQ" %>
+<% end %>
 <br />
 <%= link_to "New FAQ", new_admin_faq_path %>
