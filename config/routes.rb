@@ -14,7 +14,7 @@ MarketingApp::Application.routes.draw do
 
   match '/more', :to => 'pages#more'
   match '/pricing', :to => 'pages#pricing'
-  match '/contact', :to => 'pages#contact'
+  match '/thank_you', :to => 'pages#thank_you'
 
   namespace :admin do
     resources :users

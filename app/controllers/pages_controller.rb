@@ -12,8 +12,8 @@ class PagesController < ApplicationController
     @title = "Pricing"
   end
 
-  def contact
-    @title = "Contact"
+  def thank_you
+    @title = "Thank You"
   end
 
 end
