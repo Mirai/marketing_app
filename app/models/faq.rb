@@ -1,3 +1,16 @@
+# == Schema Information
+# Schema version: 20110121053026
+#
+# Table name: faqs
+#
+#  id         :integer         not null, primary key
+#  question   :string(255)
+#  answer     :string(255)
+#  position   :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Faq < ActiveRecord::Base
   before_create :update_position
 

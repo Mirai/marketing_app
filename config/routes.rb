@@ -5,7 +5,9 @@ MarketingApp::Application.routes.draw do
 
   match '/signup', :to => 'users#new'
 
-  resources :users, :user_sessions, :faqs
+  resources :users, :user_sessions, :faqs, :contacts
+
+  match '/contact_us', :to => 'contacts#new'
 
   match '/login', :to => 'user_sessions#new'
   match '/logout', :to => 'user_sessions#destroy'
