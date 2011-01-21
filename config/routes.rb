@@ -18,7 +18,11 @@ MarketingApp::Application.routes.draw do
 
   namespace :admin do
     resources :users
-    resources :contacts
+    resources :contacts do
+      collection do
+        post :mark_responded
+      end
+    end
     resources :faqs do
       collection do
         post :reorder

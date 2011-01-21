@@ -1,20 +1,27 @@
 <h1>Contacts</h1>
 
+<%= form_tag mark_responded_admin_contacts_path do %>
+
 <table cellpadding="5" cellspacing="0">
   <tr>
     <th>Respond?</th>
     <th>Name</th>
     <th>Email</th>
+    <th>Sent</th>
     <th></th>
     <th></th>
   </tr>
 <% @contacts.each do |contact| %>
   <tr>
-    <td></td>
+    <td align="center"><%= responded_to(contact) %></td>
     <td><%= contact.name %></td>
     <td><%= contact.email %></td>
-    <td><%= link_to "Show", contact_path(contact) %></td>
+    <td><%= contact.created_at %></td>
+    <td><%= link_to "Show", admin_contact_path(contact) %></td>
     <td><%= link_to "Delete", admin_contact_path(contact), :confirm => "Are you sure?", :method => :delete %>
   </tr>
 <% end %>
 </table>
+<br />
+<%= submit_tag "Mark Responded" %>
+<% end %>
